@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Distribution Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <div class="logo">FD</div>
+            <div>
+                <h2>Food Distribution</h2>
+                <p>Management System</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <span class="status-dot"></span>
+            <span>Office Management</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">OFFICE MANAGEMENT</p>
+                <h1>Food Distribution Records</h1>
+                <p class="subtitle">
+                    Manage food provider details in one place.
+                </p>
+            </div>
+
+            <div class="date-card">
+                <span>Today's Date</span>
+                <strong id="todayDate">Loading...</strong>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Records</p>
+                <h2 id="totalRecords">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Today's Records</p>
+                <h2 id="todayRecords">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Search Records</p>
+                <h2>⌕</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Add Provider Details</h2>
+                    <p>Enter the food provider's information below.</p>
+                </div>
+            </div>
+
+            <form id="providerForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="providerName">Provider Name</label>
+                        <input
+                            type="text"
+                            id="providerName"
+                            placeholder="Enter full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodDate">Providing Date</label>
+                        <input type="date" id="foodDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Mobile Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter 10-digit number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input
+                            type="text"
+                            id="designation"
+                            placeholder="Enter designation"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-secondary">
+                        Clear
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        + Save Provider
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel records-panel">
+            <div class="panel-heading records-heading">
+                <div>
+                    <h2>Provider Records</h2>
+                    <p>View and manage all provider entries.</p>
+                </div>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search name or phone..."
+                >
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Provider Name</th>
+                            <th>Providing Date</th>
+                            <th>Mobile Number</th>
+                            <th>Designation</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="providerTable">
+                        <tr>
+                            <td colspan="6" class="empty-message">
+                                No records added yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            Food Distribution Management System
+            <span> | Office Use</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
